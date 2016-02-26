@@ -2,11 +2,13 @@
   <head>
     <title>Google analytics test</title>
     <script type="text/javascript">
+
     function gaEvent(category, action, label, value){
     var opt_noninteraction;
     ga('send', 'event', category, action, label, value);
     console.log('sendevent:category: ' + category + ' action: ' + action + ' label: ' + label + ' value: ' + value);
     }
+
     function gaCustVar(index, dimensionValue){
     ga('set', 'dimension' + index, dimensionValue);
     console.log('set:dimension:' + 'dimension' + index + ',dimensionValue:' + dimensionValue)
@@ -16,7 +18,9 @@
     function gaSubmit(){
       ga('send', 'pageview', '/');
     }
+
     </script>
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -25,12 +29,13 @@
 
       ga('create', 'UA-74295362-1', 'auto');
       ga('send', 'pageview');
-
     </script>
+
   </head>
   <body>
     <h1>D-Bro Test</h1>
     <ul>
+      <li><button onClick="ga('send', 'event', { eventCategory: 'data-browser', eventAction: 'widget-load', eventLabel: 'isBreakdown', eventValue: 0});">D-Bro Breakdown Show </button></li>
       <li><button onclick="gaEvent('data-browser', 'widget-load', 'isBreakdown', '0')">D-Bro Breakdown Show </button></li>
       <li><button onclick="gaEvent('data-browser', 'widget-load', 'isBreakdown', '1')">D-Bro Breakdown Hidden </button></li>
       <li><button onclick="gaEvent('data-browser', 'hover', 'items tooltip', '42384')">D-Bro Items Tooltip Date 1 </button></li>
