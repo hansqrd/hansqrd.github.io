@@ -11,48 +11,11 @@
       ga('send', 'pageview');
 
     </script>
-
-    <script type="text/javascript">
-      function gaEvent(category, action, label, value){
-        var opt_noninteraction;
-        ga('send', 'event', category, action, label, value);
-        console.log('sendevent:category: ' + category + ' action: ' + action + ' label: ' + label + ' value: ' + value);
-      }
-
-      function gaCustVar(index, dimensionValue){
-        ga('set', 'dimension' + index, dimensionValue);
-        console.log('set:dimension:' + 'dimension' + index + ',dimensionValue:' + dimensionValue)
-      }
-
-      function gaSubmit(){
-        ga('send', 'pageview', '/');
-      }
-    </script>
-
-
-
   </head>
   <body>
-    <h1>D-Bro Test</h1>
+    <h1>D-bro Tests</h1>
     <ul>
       <li><button onClick="ga('send', 'event', { eventCategory: 'data-browser', eventAction: 'widget-load', eventLabel: 'isBreakdown', eventValue: 0});">D-Bro Breakdown Show </button></li>
-      <li><button onclick="gaEvent('data-browser', 'widget-load', 'isBreakdown', '0')">D-Bro Breakdown Show </button></li>
-      <li><button onclick="gaEvent('data-browser', 'widget-load', 'isBreakdown', '1')">D-Bro Breakdown Hidden </button></li>
-      <li><button onclick="gaEvent('data-browser', 'hover', 'items tooltip', '42384')">D-Bro Items Tooltip Date 1 </button></li>
-      <li><button onclick="gaEvent('data-browser', 'hover', 'items tooltip', '42415')">D-Bro Items Tooltip Date 2 </button></li>
-      <li><button onclick="gaEvent('data-browser', 'click', 'insight-details', '')">D-Bro Insights Details Click </button></li>
-      <li><button onclick="gaEvent('data-browser', 'click', 'Natural Gas', '3495')">D-Bro Fuel ELEC Click </button></li>
-      <li><button onclick="gaEvent('data-browser', 'click', 'Electricty', '5629')">D-Bro Fuel GAS Click </button></li>
-    </ul>
-    <h1>Custom Variables</h1>
-    <ul>
-      <li><button onclick='gaCustVar(1,"1st login")'>1st login</button></li>
-      <li><button onclick='gaCustVar(1,"0-1 month")'>0-1 months</button></li>
-    </ul>
-
-    <h1>Submit custom dimensions</h1>
-    <ul>
-      <li><button onclick='gaSubmit()'>Submit</button></li>
     </ul>
   </body>
 </html>
